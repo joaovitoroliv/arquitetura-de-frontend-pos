@@ -1,7 +1,7 @@
 // Criação de um hook customizado - obrigatoriamente essa sintaxe
-
+// Separar arquivos de hooks por contexto (Filmes - Domínio)
 import { useEffect, useState } from "react";
-import { getPopularMovies } from "../services/movies.services";
+import { getMovie, getPopularMovies } from "../services/movies.services";
 
 // Lógica que depende de Estados
 export function useMovies(){    
@@ -17,4 +17,17 @@ export function useMovies(){
      // Esse [] é basicamente algo que vai ficar fazendo de "tanto em tanto tempo",
      // nesse caso vazio, somente uma vez
      return movies;
+}
+
+export function useMovie(movieId){
+    const [movie, setMovie] = useState([]); // Renderizar inicialmente com vazio
+
+    useEffect(() => {
+      getMovie(movieId).then(({data}) => {
+        setMovie(data);
+      })
+    }, [movieId]);
+
+
+    return movie;
 }
