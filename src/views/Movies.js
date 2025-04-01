@@ -1,7 +1,6 @@
 // Views: Importante é a Interação com usuário final
 import { MovieItem } from "../components/movieItem/MovieItem";
 import { useMovies } from "../hooks/useMovies";
-import "./movies.css"
 import styles from "./Movies.module.css"
 
 export function Movies() {

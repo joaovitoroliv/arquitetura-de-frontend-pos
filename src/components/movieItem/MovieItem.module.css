@@ -3,6 +3,9 @@
     margin-right: 20px;
     margin-bottom: 50px;
     justify-content: center;
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .detailsBtn {
