@@ -1,11 +1,13 @@
 // Views: Importante é a Interação com usuário final
 import { useMovies } from "../hooks/useMovies";
+import "./movies.css"
+import styles from "./Movies.module.css"
 
 export function Movies() {
     const movies = useMovies(); 
 
     return (
-    <section>
+    <section className={styles.moviesContainer}>
         <h1>
             Filmes populares
 
