@@ -1,5 +1,5 @@
 // Views: Importante é a Interação com usuário final
-import { MovieItem } from "../components/MovieItem";
+import { MovieItem } from "../components/movieItem/MovieItem";
 import { useMovies } from "../hooks/useMovies";
 import "./movies.css"
 import styles from "./Movies.module.css"
@@ -13,8 +13,8 @@ export function Movies() {
         Filmes populares 
         </h1>
 
-            <div className="moviesList">
-                {movies.map((movie) => <MovieItem movie={movie}/>)}
+            <div className={styles.moviesList}>
+                {movies.map((movie) => <MovieItem key={movie.id} movie={movie}/>)}
             </div>
     </section>
     );
